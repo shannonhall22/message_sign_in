@@ -1,0 +1,19 @@
+<h1>Edit post #<%= @post.id  %></h1>
+
+<form action="/update_post/<%= @post.id %>">
+  <div>
+    <label for="title">Title:</label><br>
+    <input type="text" id="title" name="title" value="<%= @post.title %>">
+  </div>
+  <div>
+    <label for="image_url">image_url:</label><br>
+    <input type="text" id="image_url" name="image_url" value="<%= @post.image_url %>">
+  </div>
+  <div>
+    <label for="contents">contents:</label><br>
+    <textarea type="text" id="contents" name="contents"><%= @post.contents %></textarea>
+  </div>
+  <div>
+    <input type="submit">
+  </div>
+</form>
