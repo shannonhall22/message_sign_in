@@ -6,7 +6,31 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+User.destroy_all
+users = [
+  {
+    first_name: "Jimmy",
+    last_name: "McCarthy",
+    email: "jimmy@example.com"
+  },
+  {
+    first_name: "Jolyon",
+    last_name: "Ticer-Wurr",
+    email: "jolyon@example.com"
+  },
+  {
+    first_name: "Natalya",
+    last_name: "Chytry",
+    email: "natalya@example.com"
+  }
+]
 
+users.each do |user_hash|
+  User.create!(user_hash)
+end
+puts "#{User.count} users in the database"
+
+Post.destroy_all
 posts = [
   {
     title: "To Invent the Future, You Must Understand the Past",
