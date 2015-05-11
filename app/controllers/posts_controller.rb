@@ -10,6 +10,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new
     @post.title = params[:title]
+    @post.user_id = params[:user_id]
     @post.image_url = params[:image_url]
     @post.contents = params[:contents]
     @post.save
@@ -23,6 +24,7 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
+    @post.user_id = params[:user_id]
     @post.title = params[:title]
     @post.image_url = params[:image_url]
     @post.contents = params[:contents]

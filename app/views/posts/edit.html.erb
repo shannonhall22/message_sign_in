@@ -6,6 +6,20 @@
     <input type="text" id="title" name="title" value="<%= @post.title %>">
   </div>
   <div>
+    <label for="user_id">User</label>
+    <select name="user_id" id="user_id">
+      <% User.all.each do |user| %>
+        <!-- 1a. Check if the user is the posts current user -->
+        <!-- 1b. Add the "selected" attribute to the option tag -->
+        <% if user.id == @post.user_id %>
+          <option value="<%= user.id %>" selected><%=  user.full_name %></option>
+        <% else %>
+          <option value="<%= user.id %>"><%=  user.full_name %></option>
+        <% end %>
+      <% end %>
+    </select>
+  </div>
+  <div>
     <label for="image_url">image_url:</label><br>
     <input type="text" id="image_url" name="image_url" value="<%= @post.image_url %>">
   </div>

@@ -22,8 +22,8 @@ Rails.application.routes.draw do
   get("/create_post", {:controller => "posts", :action => "create"})
 
   # READ
-  get("/posts/:id", {:controller => "posts", :action => "show"})
-  get("/posts/", {:controller => "posts", :action => "index"})
+  get("/posts/:id", {:controller => "posts", :action => "show", :as => "post"})
+  get("/posts/", {:controller => "posts", :action => "index", :as => "posts"})
 
   # UPDATE
   get("/posts/:id/edit", {:controller => "posts", :action => "edit"})
