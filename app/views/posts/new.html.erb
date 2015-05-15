@@ -1,27 +1,30 @@
-<h1>Add a new post</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Add a new post</h1>
 
-<form action="/create_post">
-  <div>
-    <label for="title">Title:</label><br>
-    <input type="text" id="title" name="title">
+      <form action="/create_post">
+        <div>
+          <label for="title">Title:</label><br>
+          <input type="text" id="title" name="title">
+        </div>
+        <div>
+          <input type="hidden" name="user_id" id="user_id" value="<%= current_user.id %>">
+        </div>
+        <div>
+          <label for="image_url">image_url:</label><br>
+          <input type="text" id="image_url" name="image_url">
+        </div>
+        <div>
+          <label for="contents">contents:</label><br>
+          <textarea type="text" id="contents" name="contents"></textarea>
+        </div>
+        <div>
+          <input type="submit">
+        </div>
+      </form>
+
+    </div>
   </div>
-  <div>
-    <label for="user_id">User</label>
-    <select name="user_id" id="user_id">
-      <% User.all.each do |user| %>
-        <option value="<%= user.id %>"><%=  user.full_name %></option>
-      <% end %>
-    </select>
-  </div>
-  <div>
-    <label for="image_url">image_url:</label><br>
-    <input type="text" id="image_url" name="image_url">
-  </div>
-  <div>
-    <label for="contents">contents:</label><br>
-    <textarea type="text" id="contents" name="contents"></textarea>
-  </div>
-  <div>
-    <input type="submit">
-  </div>
-</form>
+</div>
+
