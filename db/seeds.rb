@@ -11,17 +11,23 @@ users = [
   {
     first_name: "Jimmy",
     last_name: "McCarthy",
-    email: "jimmy@example.com"
+    email: "jimmy@example.com",
+    password: "12341234",
+    password_confirmation: "12341234"
   },
   {
     first_name: "Jolyon",
     last_name: "Ticer-Wurr",
-    email: "jolyon@example.com"
+    email: "jolyon@example.com",
+    password: "12341234",
+    password_confirmation: "12341234"
   },
   {
     first_name: "Natalya",
     last_name: "Chytry",
-    email: "natalya@example.com"
+    email: "natalya@example.com",
+    password: "12341234",
+    password_confirmation: "12341234"
   }
 ]
 
